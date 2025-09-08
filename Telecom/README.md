@@ -3,7 +3,7 @@
 
 ## Project Overview
 
-This repository contains design components for an FPGA-based Orthogonal Frequency-Division Multiplexing (OFDM) communication link, focusing on the critical task of signal synchronization. The project aims to optimize link performance by implementing and analyzing algorithms for correcting:
+This folder contains design components for an FPGA-based Orthogonal Frequency-Division Multiplexing (OFDM) communication link, focusing on the critical task of signal synchronization. The project aims to optimize link performance by implementing and analyzing algorithms for correcting:
 
 *   **CFO (Carrier Frequency Offset)**
 *   **SCO (Sampling Clock Offset)**
