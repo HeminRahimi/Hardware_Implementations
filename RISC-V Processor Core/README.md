@@ -74,7 +74,7 @@ The test program validates the core functionality by using all supported instruc
     add  x10, x1, x2      # x10 = 5 + 3 = 8        (R-type: functional ALU test)
     sub  x30, x3, x2      # x30 = 10 - 3 = 7       (R-type: subtraction with different dest)
     addi x15, x2, 15      # x15 = 3 + 15 = 18      (I-type: immediate arithmetic)
-    sw   x20, 8(x5)       # mem[0x108] = 0xDEADBEEF (S-type: store to data memory)
+    sw   x20, 8(x5)       # mem[x5 + 8]            (S-type: store to data memory)
     lw   x8, 0(x15)       # x8 = mem[18]           (I-type: load from computed address)
     add  x30, x8, x0      # x30 = x8 (copy)        (R-type: register-to-register move)
     beq  x8, x8, 4        # Always taken (PC+4)    (B-type: trivial branch validation)
