@@ -71,13 +71,10 @@ The core supports the following instructions from the RV32I set, providing a com
 The test program validates the core functionality by using all supported instruction types and checking the results.
 
 ```asm
-    addi x1, x0, 1       # x1 = 1
-    addi x2, x0, 2       # x2 = 2
-    add  x3, x1, x2      # x3 = 1 + 2 = 3 (R-type)
-    addi x5, x0, 5       # x5 = 5 (I-type, base address)
-    sw   x3, 0(x5)       # mem[5] = 3 (S-type)
-    lw   x4, 0(x5)       # x4 = mem[5] = 3 (I-type, load)
-    beq  x3, x4, end     # Branch should be taken (B-type)
-    addi x6, x0, 999     # This instruction should be skipped
-end:
-    addi x7, x0, 25      # x7 = 25
+    add  x10, x1, x2      # x10 = 5 + 3 = 8        (R-type: functional ALU test)
+    sub  x30, x3, x2      # x30 = 10 - 3 = 7       (R-type: subtraction with different dest)
+    addi x15, x2, 15      # x15 = 3 + 15 = 18      (I-type: immediate arithmetic)
+    sw   x20, 8(x5)       # mem[0x108] = 0xDEADBEEF (S-type: store to data memory)
+    lw   x8, 0(x15)       # x8 = mem[18]           (I-type: load from computed address)
+    add  x30, x8, x0      # x30 = x8 (copy)        (R-type: register-to-register move)
+    beq  x8, x8, 4        # Always taken (PC+4)    (B-type: trivial branch validation)
