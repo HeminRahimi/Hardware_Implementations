@@ -13,7 +13,7 @@ module TB_top ();
         clk = 0 ; rst = 1;
         #10;
         rst = 0;
-        #75;
+        #85;
         $finish;
     end
 
