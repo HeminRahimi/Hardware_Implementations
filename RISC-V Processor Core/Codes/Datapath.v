@@ -15,7 +15,7 @@ module DP (clk, rst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluO
 
     Instruction_Mem inst_Instruction_memory (rst, PC_out, Instruction);
 
-	Reg_bank inat_reg_bank (clk, rst, Instruction[19 : 15], Instruction[24 : 20], 
+	Reg_bank inst_reg_bank (clk, rst, Instruction[19 : 15], Instruction[24 : 20], 
 		Instruction[11 : 7], Mux_to_reg_bank_WD, RegWrite, read_data1, read_data2);
 
 	Imm_gen inst_immidiate_generation (Instruction, imm_out);
@@ -39,3 +39,4 @@ module DP (clk, rst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, AluO
 	Adder inst_adder (PC_out, imm_out, Adder_out);
 	
 endmodule
+
